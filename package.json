@@ -2,7 +2,7 @@
   "name": "zeemee-colleges",
   "version": "0.1.0",
   "private": true,
-  "homapage": "https://github.com/zeemee/zeemee-colleges",
+  "homapage": "https://zeemee.github.io/zeemee-colleges/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
