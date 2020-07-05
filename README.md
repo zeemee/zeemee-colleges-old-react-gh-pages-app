@@ -1,6 +1,6 @@
 # colleges.zeemee.com
 
-## Setup 
+## Setup
 
 TODO: idiot proof this
 
@@ -22,7 +22,7 @@ TODO: clean up
 
 ## Custom domain
 
-Set up CNAME in [cloudflare](https://www.cloudflare.com/) 
+Set up CNAME in [cloudflare](https://www.cloudflare.com/)
 
 * colleges-test.zeemee.com -> zeemee.github.io
 * change [package.json](https://github.com/zeemee/zeemee-colleges/blob/master/package.json)'s `homepage` to be `https://colleges-test.zeemee.com`
@@ -34,3 +34,4 @@ Set up CNAME in [cloudflare](https://www.cloudflare.com/)
 * [react-gh-pages](https://github.com/gitname/react-gh-pages) (couldn't get this working without a custom domain)
 * [react-routing](https://reactrouter.com/web/guides/quick-start) `npm install react-router-dom`
 * Custom domains (see seperate section in this doc)
+* [react-foundation](https://github.com/digiaonline/react-foundation) this comes with [useful components](https://github.com/digiaonline/react-foundation/tree/master/src/components) as well
