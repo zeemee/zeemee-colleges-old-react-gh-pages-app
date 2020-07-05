@@ -17,8 +17,7 @@ class MoreInfoForm extends Component {
   }
 
   handleSubmit(event) {
-    const url = "https://www.zaptack.com/api/poja/colleges/more_info.json";
-    //const url = "http://zeemee-dev.com:3000/api/poja/colleges/more_info.json";
+    const url = `${process.env.REACT_APP_BASE_API_URL}/more_info.json`;
 
     const requestOptions = {
         method: 'POST',

@@ -11,7 +11,8 @@ class CaseStudies extends Component {
   }
 
   componentDidMount() {
-    fetch("https://www.zaptack.com/api/poja/colleges/case_studies.json")
+    const url = `${process.env.REACT_APP_BASE_API_URL}/case_studies.json`;
+    fetch(url)
       .then(res => res.json())
       .then(
         (result) => {

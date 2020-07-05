@@ -8,6 +8,42 @@ TODO: idiot proof this
 * install npm
 * install create-react-app
 
+## Environment variables
+
+There are multiple env files:
+
+* `.env` This is for production variables
+* `.env.development` This is for local dev vars (not currently used)
+* `.env.development.local` Is for your specific local dev vars and overrides `.env.development`
+* `.env.test` For specs (not currently used)
+
+Example:
+
+`.env`
+
+```
+REACT_APP_BASE_URL=http://www.zaptack.com
+```
+
+`.env.development`
+
+```
+PORT=3001
+REACT_APP_BASE_URL=http://zeemee-dev.com:3000
+```
+
+Note that `PORT` is for `npm start` but any ENV variable used in the actual React app MUST start with `REACT_APP_` 
+
+When you run `npm start` node will know to use `.env.development.local` first then `.env.development` then `.env`. In `production` it will only use `.env`. Note that we don't have `staging` at this time. 
+
+You can use this in the app by doing things like `<p>%REACT_APP_BASE_URL%</p>` or - in JSX:
+
+```
+var url = `${process.env.REACT_APP_BASE_URL}/bob.json`;
+```
+
+[More on this here](https://create-react-app.dev/docs/adding-custom-environment-variables/)
+
 ## Development process
 
 TODO: clean up
