@@ -6,6 +6,7 @@ import {
   Link
 } from "react-router-dom";
 import CaseStudies from './components/CaseStudies';
+import MoreInfoForm from './components/MoreInfoForm';
 
 export default function App() {
   return (
@@ -44,7 +45,12 @@ export default function App() {
 }
 
 function Home() {
-  return <h2>Home</h2>;
+  return (
+    <div>
+      <p>Test form</p>
+      <MoreInfoForm/>
+    </div>
+  );
 }
 
 function CaseStudiesPage() {
