@@ -7,6 +7,7 @@ TODO: idiot proof this
 * install Node.js
 * install npm
 * install create-react-app
+* npm install babel-cli@6 babel-preset-react-app@3
 
 ## Environment variables
 
@@ -32,9 +33,9 @@ PORT=3001
 REACT_APP_BASE_URL=http://zeemee-dev.com:3000
 ```
 
-Note that `PORT` is for `npm start` but any ENV variable used in the actual React app MUST start with `REACT_APP_` 
+Note that `PORT` is for `npm start` but any ENV variable used in the actual React app MUST start with `REACT_APP_`
 
-When you run `npm start` node will know to use `.env.development.local` first then `.env.development` then `.env`. In `production` it will only use `.env`. Note that we don't have `staging` at this time. 
+When you run `npm start` node will know to use `.env.development.local` first then `.env.development` then `.env`. In `production` it will only use `.env`. Note that we don't have `staging` at this time.
 
 You can use this in the app by doing things like `<p>%REACT_APP_BASE_URL%</p>` or - in JSX:
 
