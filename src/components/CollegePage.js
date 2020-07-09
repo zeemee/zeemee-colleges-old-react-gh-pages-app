@@ -1,24 +1,24 @@
 import React, { Component } from "react";
 
-class CaseStudies extends Component {
+class CollegePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       error: null,
       isLoaded: false,
-      items: []
+      page: {}
     };
   }
 
   componentDidMount() {
-    const url = `${process.env.REACT_APP_BASE_API_URL}/case_studies.json`;
+    const url = `${process.env.REACT_APP_BASE_API_URL}/college_page.json?slug=${this.props.match.params.id}`;
     fetch(url)
       .then(res => res.json())
       .then(
         (result) => {
           this.setState({
             isLoaded: true,
-            items: result.items
+            page: result
           });
         },
         // Note: it's important to handle errors here
@@ -34,7 +34,7 @@ class CaseStudies extends Component {
   }
 
   render() {
-    const { error, isLoaded, items } = this.state;
+    const { error, isLoaded, page } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -42,18 +42,12 @@ class CaseStudies extends Component {
     } else {
       return (
         <div>
-          <h1>Case Studies</h1>
+          <h1>College Page</h1>
+          <h2>{this.props.match.params.id}</h2>
           <ul>
-            {items.map(item => (
-              <li key={item.name}>
-                {item.name}
-                <ul>
-                  {Object.keys(item).map(key => (
-                    <li key={key}>
-                      {key}: {item[key]}
-                    </li>
-                  ))}
-                </ul>
+            {Object.keys(page).map(key => (
+              <li key={key}>
+                {key}: {page[key]}
               </li>
             ))}
           </ul>
@@ -63,4 +57,4 @@ class CaseStudies extends Component {
   }
 }
 
-export default CaseStudies;
+export default CollegePage;
