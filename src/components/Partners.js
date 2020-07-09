@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 
 class Partners extends Component {
   constructor(props) {
@@ -42,9 +45,26 @@ class Partners extends Component {
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
+      var results = [], currentCols = [];
+      partners.forEach((item, index) => {
+        if (index % 6 === 0) {
+          if (index > 0) { results.push(<Row>{currentCols}</Row>) };
+          currentCols = [];
+        };
+        currentCols.push(
+          <Col>
+            <img alt={item.name} width="100px" src={item.logo}/>
+          </Col>
+        );
+      });
+      if (currentCols.lenght > 0) { results.push(<Row>{currentCols}</Row>) };
       return (
-        <div>
+        <Container>
           <h1>Partners Page</h1>
+          <div>{results}</div>
+
+          <hr/>
+          <h2>Debug</h2>
           <table>
             <tbody>
               <tr valign="top">
@@ -71,7 +91,7 @@ class Partners extends Component {
               </tr>
             </tbody>
           </table>
-        </div>
+        </Container>
       );
     }
   }

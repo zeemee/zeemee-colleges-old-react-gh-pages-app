@@ -6,9 +6,7 @@ TODO: idiot proof this
 
 * install Node.js
 * install npm
-* install create-react-app
-* http://browserify.org/
-* npm install -g browserify
+* npm install create-react-app browserify react-bootstrap bootstrap popper.js --save
 
 ## Environment variables
 
